@@ -344,6 +344,7 @@ def webhook():
 
     if not monitor_started:
         print("🔁 Перезапуск фоновых потоков")
+        threading.Thread(target=bot.infinity_polling, daemon=True).start()
         monitor_started = True
 
     return '!', 200
