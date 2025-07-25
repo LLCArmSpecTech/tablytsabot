@@ -35,9 +35,8 @@ def ensure_machine_sheet(name):
 # === Команды ===
 @bot.message_handler(commands=["start"])
 def start(message):
-    print("▶️ Обработан /start для", chat_id)
-    print(f"Получен /start от {message.chat.id}")
     chat_id = message.chat.id
+    print("▶️ Обработан /start для", chat_id)
     bot.send_message(chat_id, "Введите ваше имя:")
     bot.register_next_step_handler(message, save_name)
 
