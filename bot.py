@@ -344,8 +344,6 @@ def webhook():
 
     if not monitor_started:
         print("🔁 Перезапуск фоновых потоков")
-        threading.Thread(target=monitoring_loop, daemon=True).start()
-        threading.Thread(target=monitor_additional, daemon=True).start()
         monitor_started = True
 
     return '!', 200
