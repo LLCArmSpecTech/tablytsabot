@@ -338,6 +338,7 @@ bot.set_webhook(url='https://tablytsabot.onrender.com')
 
 # Flask приложение для обработки обновлений
 from flask import Flask, request
+from telebot import types
 
 app = Flask(__name__)
 monitor_started = False
