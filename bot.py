@@ -345,6 +345,9 @@ monitor_started = False
 
 @app.route('/', methods=['POST'])
 def webhook():
+    if request.headers.get('Content-Type', '').lower() != 'application/json':
+        return 'Invalid content type', 403
+
     global monitor_started
     json_str = request.get_data().decode('UTF-8')
     print("📥 Получено обновление:", json_str)
