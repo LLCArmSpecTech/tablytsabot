@@ -357,5 +357,5 @@ def index():
 if __name__ == '__main__':
     bot.remove_webhook()
     time.sleep(1)
-    bot.set_webhook(url='https://logistics-bot-nnxy.onrender.com')
+    bot.set_webhook(url='https://tablytsabot.onrender.com')
     app.run(host="0.0.0.0", port=10000)
