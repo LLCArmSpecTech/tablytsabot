@@ -333,6 +333,7 @@ def nova_poshta_cancel(message):
 from flask import Flask, request
 
 app = Flask(__name__)
+monitor_started = False
 
 @app.route('/', methods=['POST'])
 def webhook():
