@@ -2,7 +2,7 @@ import os
 import telebot
 from flask import Flask, request
 
-TOKEN = os.environ.get("TOKEN", "<УКАЖИ_СВОЙ_ТОКЕН>")
+TOKEN = os.environ.get("TOKEN", "8439264693:AAEE7Zq-4uxAfK70Vop27Ff8zt5nfOkRPQA")
 APP_URL = os.environ.get("APP_URL", "https://tablytsabot.onrender.com")
 
 bot = telebot.TeleBot(TOKEN)
