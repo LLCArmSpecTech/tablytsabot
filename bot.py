@@ -449,18 +449,12 @@ def process_reject_comment(message):
     sheet_tasks.update_cell(row, col + 1, value)
     bot.send_message(chat_id, "Причина отказа сохранена.")
     del users[chat_id]['reject_context']
-def reject_reason(message, row, col, driver):
-
+    
 # Rebind next-step handlers with guard to prevent crashes on exceptions
 impossible_reason = guarded_next_step(impossible_reason)
 fail_reason = guarded_next_step(fail_reason)
 add_comment = guarded_next_step(add_comment)
 process_reject_comment = guarded_next_step(process_reject_comment)
-
-    reason = message.text.strip()
-    timestamp = (datetime.datetime.utcnow() + datetime.timedelta(hours=3)).strftime("%H:%M")
-    sheet_tasks.update_cell(row, col + 1, f"{driver} ({timestamp}): {reason}")
-    bot.send_message(message.chat.id, "Комментарий сохранён.")
 
 # Перед запуском потоков — разовая попытка инициализации листов
 init_sheets()
