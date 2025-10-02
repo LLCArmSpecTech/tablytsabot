@@ -330,6 +330,7 @@ def handle_photo(message):
 
         user.pop("waiting_for_photo", None)
         keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        keyboard.add("📦 Новая почта")
         keyboard.add("🚛 Начать маршрут")
         bot.send_message(chat_id, "Маршрут завершён. Выберите следующее действие:", reply_markup=keyboard)
         return
